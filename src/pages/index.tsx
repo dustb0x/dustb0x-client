@@ -1,10 +1,7 @@
+// Config
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-
-// Config
-import { useState } from 'react'
 import { appName } from '@/config/constants/app'
 
 // Component
@@ -38,7 +35,7 @@ const Home: NextPage = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          © 2022 Dustb0x.
+          © 2022 {appName}.
         </a>
       </footer>
     </div>
