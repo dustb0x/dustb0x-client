@@ -1,4 +1,5 @@
 // Config
+import { useRouter } from 'next/router'
 import React, { useState } from 'react'
 import { appName } from '@/config/constants/app'
 
@@ -6,7 +7,6 @@ import { appName } from '@/config/constants/app'
 import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
-import Divider from '@mui/material/Divider'
 import Drawer from '@mui/material/Drawer'
 import List from '@mui/material/List'
 import ListItem from '@mui/material/ListItem'
@@ -26,6 +26,7 @@ import MenuIcon from '@mui/icons-material/Menu'
 import MoreIcon from '@mui/icons-material/MoreVert'
 
 const Navbar: React.FC = () => {
+  const router = useRouter()
   const [drawer, setDrawer] = useState<boolean>(false)
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
 
@@ -85,7 +86,6 @@ const Navbar: React.FC = () => {
         open={open}
         onClose={() => setAnchorEl(null)}
       >
-        <MenuItem>Network</MenuItem>
         <MenuItem>Connect Wallet</MenuItem>
       </Menu>
 
@@ -100,7 +100,7 @@ const Navbar: React.FC = () => {
                 <ListItemIcon>
                   <DashboardIcon />
                 </ListItemIcon>
-                <ListItemText primary="Dashboard" />
+                <ListItemText primary="Dashboard" onClick={() => router.push('/')} />
               </ListItemButton>
             </ListItem>
           </List>
