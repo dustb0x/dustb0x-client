@@ -14,19 +14,6 @@ import Navbar from '@/components/Navbar'
 import Box from '@mui/material/Box'
 
 const Home: NextPage = () => {
-  const [state, setState] = useState(false)
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
-
-  const onClick = () => {
-    setState(true)
-  }
-
-  const open = Boolean(anchorEl)
-
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(event.currentTarget)
-  }
-
   return (
     <div>
       <Head>
